@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ChatGPT//Calendar Event//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:867777ce-2145-4ed6-a92a-ebd78d48f836@chatgpt.local
+DTSTAMP:20250902T045241Z
+DTSTART:20251002T060000Z
+DTEND:20251002T130000Z
+SUMMARY:Vzdělávací den bezpečnosti na Zichovci
+LOCATION:Zichovec 99\, 273 74 Zichovec
+DESCRIPTION:Dobrý den,\nrádi bychom Vám připomněli pozvánku na 6. ročník akce TRIO HAVEL, kterou každoročně pořádáme. Letos i s workshopem od BOZP21.\n\nTOP 5 PŘEDNÁŠEK Z PROGRAMU:\n- Aktualizovaná norma na ochranu zraku (3M)\n- Legislativa v ochraně dýchacích cest (BOZP 21)\n- Novinky v bezpečnostní obuvi (Panther)\n- Moderní materiály multinormních oděvů (SIR SAFETY)\n- Praktická ukázka servisu ODC (TRIO HAVEL)
+END:VEVENT
+END:VCALENDAR

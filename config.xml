@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <!--konfiguracni soubor-->
+  <responsiveDesign enabled="true" />
+  <fullLogin enabled="true" />
+  <useRESTapi enabled="true" />
+
+  <settings>
+    <TruncateCacheDbIsAllowed value="true" />
+  </settings>
+
+  <!--connection string pro cacheDB, suggest-->
+  <cacheDB enabled="true" connectionString="Data Source=localhost;Initial Catalog=ZAS_CACHE;Persist Security Info=True;User ID=sa;Password=sqlsql;Connection Timeout=90;Connection Lifetime=0;Min Pool Size=1;Max Pool Size=10;Pooling=true;" />
+
+  <!--definice SMTP serveru-->
+  <smtpSrv pickupDirectory="" host="localhost" port="25" userName="" password="" domain="" enableSsl="false"/>
+
+  <!--nastaveni odesílání mailu-->
+  <sendingMail>
+    <errorMail enabled="true" />
+  </sendingMail>
+
+  <!--definice mailovych adres type=to,bcc,cc-->
+  <mailAddress>
+    <!--sender muze byt pouze jeden -->
+    <errorSenderAddress address="zasshop.net.trio@zasgroup.cz" name="" />
+    <!--from muze byt pouze jeden (vetsinou stejne jako sender, pokud neni uvedeno, pouzije se sender)-->
+    <errorFromAddress address="zasshop.net.trio@zasgroup.cz" name="" />
+
+    <!--adres muze byt N-->
+    <errorAddress type="to" address="jiriz@zasgroup.cz" name="jiriz@zasgroup.cz" />
+  </mailAddress>
+  
+  <!--definice IP adres, pro zobrazovani logu-->
+  <ipAddressForLog>
+    <ipAddress value="46.227.168.82" />
+    <ipAddress value="46.227.169.202" />
+    <ipAddress value="195.189.1.20" />
+  </ipAddressForLog>
+
+  <!--definice zda-li se maji nacitat BASIC_PARAMS vzdy, nebo jen jednou-->
+  <alwaysReadParams value="true" />
+
+  <!--definice zda-li se maji nacitat BASIC_PARAMS vzdy, nebo jen jednou-->
+  <communicationIsLogging to-file="true" />
+
+  <!--identifikace souboru pro vodoznak-->
+  <waterMark enabled="without_png" 
+      emptyCopyright="false"
+      file=""
+      level="3f"
+      hozizontalAlign="center"
+      verticalAlign="bottom" />
+
+  <!--definice záznamů pro řazení (pokud je zde neco uvedeno, celá sekce má přednost, před standardním config)-->
+  <sortItems>
+    <!--pokud je name a value prazdné, nebude se do řazení ze standardního config generovat nic (pouze řazení dle přidaných sloupců v Karatu, pokud je definováno)-->
+    <sortItem name="Doporučujeme" value="nomen.zshop_razeni_web desc, nomen.nazev asc" type="tip" />
+    <sortItem name="Název (A-Z)" value="nomen.nazev asc" type="name" />
+    <sortItem name="Název (Z-A)" value="nomen.nazev desc" type="name" />
+    <sortItem name="Nejlevnější" value="cena asc" type="price" />
+    <sortItem name="Nejdražší" value="cena desc" type="price" />
+  </sortItems>
+
+  <!--definice záznamů pro počet záznamů na stránce-->
+  <resultCountItems>
+    <resultCountItem name="9" value="9" />
+    <resultCountItem name="18" value="18" />
+    <resultCountItem name="36" value="36" />
+  </resultCountItems>
+
+  <BasketForNonRegistredUser>
+    <!--pokud je value=true a je uveden command, posila se kazde vlozeni do kosiku agentovi at si s tim neco treba udela na firemni urovni-->
+    <sendToKarat value="false" command="SET_BASKET_ITEM_NOUSER" />
+  </BasketForNonRegistredUser>
+
+  <!--definice pro zobrazeni/skryti ovladacich prvku na Master.Page-->
+  <MasterPageControlsSettings>
+    <MasterPageFile path="~/App_Firma/App_Pages/ZASshop.Master" />
+    <FullTextSearch enabled="true" visible="true" />
+    <LanguageSelector enabled="true" visible="false" />
+
+    <LoginDialog enabled="true" visible="true" />
+    <Registration enabled="true" visible="true" />
+    <Basket enabled="true" visible="true" showTotalQuantity="true" />
+    <MainMenu enabled="true" visible="true" />
+    <SiteMap enabled="true" visible="true" />
+    <LeftPanel enabled="true" visible="true" unvisibleForPages="OrderDetail,ProductDetail,Basket,CreateOrderPage,AccountSettings,AddressesList,AdministrationPage,AdministrationUsers,BranchesAndContacts,CreateNewOrderPage,CustomerPage,Home,ChangePasswordPage,InvoicesList,LoginPage,LostData,OrdersList,ManufacturersPage,RegistrationPage,ResetPassword,ShoppingList,ZASshopPage,PaymentGoPayNotifications,PaymentGoPaySuccess,PaymentGPWebPayReply,PaymentSecurePayRsbRu,QuickBuy,ResultPage,TextPage" />
+    <RightPanel enabled="true" visible="true" />
+    <CustomFooter enabled="true" visible="true" />
+    <CustomProfilePage enabled="true" />
+    <BonusInfo visible="true" />
+  </MasterPageControlsSettings>
+
+  <!--definice pro stromove struktury-->
+  <treeDefinition>
+    <MainTree defaultDepth="2" maxDepth="5" />
+    <NextTree defaultDepth="2" maxDepth="5" />
+  </treeDefinition>
+
+  <!--definice pro zobrazeni/skryti ovladacich prvku na seznamu produktů-->
+  <ProductListControlsSettings>
+    <Signpost enabled="false" show-always="true" />
+    <CustomSearch enabled="true" visible="true" showAllCategories="true" showOnSignpost="true" allCollapsed="true" /> <!--pokročilé vyhledávání-->    
+    <SortPaging visible="true" defaultSortValue="nomen.zshop_razeni_web desc, nomen.nazev asc"/> <!--zobrazovat sekci s řazením, počtem položek na stránce a stránkováním a definuje výchozí hodnotu pro řazení (prefix. je vždy data.)-->
+    <ProductListTypeEnabled catalog="enabled" picture="disabled" table="disabled" />
+    <CustomAddWhere add-where="nomen.user_zastupce=1" />
+  </ProductListControlsSettings>
+
+  <!--definice pro zobrazeni/skryti ovladacich prvku na detailu produktů-->
+  <ProductDetailControlsSettings>
+    <Compare enabled="true" visible="false" />
+    <ProductDetailRecommendedItems type="ProductListPicture" />
+    <ProductDetailStock enabled="false" />
+    <ProductDetailAlt enabled="false" />
+  </ProductDetailControlsSettings>
+
+  <!--definice pro zobrazeni/skryti tlacitek pro pokrocilou praci s kosikem-->
+  <BasketActionsSettings>
+    <SendByEmail enabled="false" />
+    <ExportToXml enabled="false" />
+    <InsertItem enabled="false" /> <!--zatim nepodporovano-->
+    <ImportFromXml enabled="false" />
+    <PrintToPdf enabled="false" />
+    <AfterChangeQuantityReCalc enabled="true" />
+  </BasketActionsSettings>
+
+  <shopingListSortItems>
+    <sortItem name="Kódu produktu" id="1" value="nomen.cislo_nomenklatury asc" />
+    <sortItem name="Kódu produktu (od konce)" id="2" value="nomen.cislo_nomenklatury desc" />
+  </shopingListSortItems>
+
+  <!--definice pro HomePage (parametr type=RESPONSE|TRANSFER urcuje, jakym zpusobem se ma provest presun, vychozi je transfer)-->
+  <xHomePageDefinition value="Home.aspx" type="TRANSFER" description="" />
+
+  <PageFileNotFoundDefinition autoRedirectToHomePage="true" />
+
+  <PagesTitle>
+    <LoginPage cz="Přihlášení" en="Enter the system" />
+  </PagesTitle>
+
+  <Attachment>
+    <SaveAttachmentsInSimpleForm enabled="true" />
+    <ProcessAttachments enabled="true" />
+  </Attachment>
+
+  <CreatingOrder>
+    <NoRightToSaveOrder text="Není možné dokončit objednávku, protože Váš účet není správně nastaven!" />
+  </CreatingOrder>
+</root>
