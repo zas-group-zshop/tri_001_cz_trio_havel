@@ -60,9 +60,12 @@
                         <!-- cartButtons -->
                         <div class="cartButtons">
                             <asp:LinkButton ID="hlCustomSearchSearch"    CssClass="button gray btn btn-basic btn-sm"       runat="server" Text="<%$ Resources: Resource, FiltersCustomSearchSearch %>" OnClick="hlCustomSearchSearch_Click" />
-                            <asp:LinkButton ID="hlCustomSearchBack"      CssClass="button gray button-filter-search-storno"  
-                                runat="server" Text="<%$ Resources: Resource, BtnStorno %>" 
+                            <asp:LinkButton ID="hlCustomSearchBack"      CssClass="button gray btn btn-basic btn-sm"  
+                                runat="server" Text="<%$ Resources: Resource, BtnStorno %>" Visible="false"
                                 onclick="hlCustomSearchBack_Click" />
+                            <a href='<%: ZASutility.MyUtility.RemoveParamFormUrl(String.Empty) %>'
+                                title='<%: ZASutility.MyUtility.GetLangResource("CustomSearchStornoBtnTitle",null,"Zrušit všechny filtry") %>'
+                                class="button gray btn btn-basic btn-sm" ><%: ZASutility.MyUtility.GetLangResource("CustomSearchStornoBtn",null,"Zrušit filtry") %></a>
                         </div>
                         <!-- /cartButtons -->
                     </div>
