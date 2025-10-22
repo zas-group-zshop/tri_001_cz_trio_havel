@@ -63,7 +63,7 @@
                             <asp:LinkButton ID="hlCustomSearchBack"      CssClass="button gray btn btn-basic btn-sm"  
                                 runat="server" Text="<%$ Resources: Resource, BtnStorno %>" Visible="false"
                                 onclick="hlCustomSearchBack_Click" />
-                            <a href='<%: ZASutility.MyUtility.RemoveParamFormUrl(String.Empty) %>'
+                            <a href='<%: (HttpContext.Current.Request.RawUrl.Contains("/?") : HttpContext.Current.Request.RawUrl.Substring(0, Url.IndexOf("/?")) ? ZASutility.MyUtility.RemoveParamFormUrl(String.Empty) %>'
                                 title='<%: ZASutility.MyUtility.GetLangResource("CustomSearchStornoBtnTitle",null,"Zrušit všechny filtry") %>'
                                 class="button gray btn btn-basic btn-sm" ><%: ZASutility.MyUtility.GetLangResource("CustomSearchStornoBtn",null,"Zrušit filtry") %></a>
                         </div>
