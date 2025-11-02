@@ -34,13 +34,13 @@
 	        	var AK = $('.atr-komb-sel').val() != null;
 	        	var ibe = true;
 	        	
-	        	if(A1 && !$('.atr_1').find('option:selected'.is('[iskclass]')))
+	        	if(A1 && !$('.atr_1').find('option:selected').is('[iskclass]'))
 		        	ibe = false;
-	        	if(A2 && !$('.atr_2').find('option:selected'.is('[iskclass]')))
+	        	if(A2 && !$('.atr_2').find('option:selected').is('[iskclass]'))
 		        	ibe = false;
-	        	if(A3 && !$('.atr_3').find('option:selected'.is('[iskclass]')))
+	        	if(A3 && !$('.atr_3').find('option:selected').is('[iskclass]'))
 		        	ibe = false;
-	        	if(AK && !$('.atr-komb-sel').find('option:selected'.is('[iskclass]')))
+	        	if(AK && !$('.atr-komb-sel').find('option:selected').is('[iskclass]'))
 		        	ibe = false;
 		        	
 	        	$('.insert-into-basket-btn').prop('disabled', !ibe);
@@ -52,6 +52,9 @@
 				InsBtnEnab();
 			});
 	        $('.atr_3').on('change', function() {
+				InsBtnEnab();
+			});
+	        $('.atr-komb-sel').on('change', function() {
 				InsBtnEnab();
 			});
 			
