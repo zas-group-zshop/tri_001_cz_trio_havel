@@ -44,7 +44,10 @@
 		        	ibe = false;
 		        	
 	        	$('.insert-into-basket-btn').prop('disabled', !ibe);
-	        	$('.insert-into-basket-btn').title('Vložení položky do košíku.');
+	        	if(ibe)
+		        	$('.insert-into-basket-btn').attr('title', 'Vložení položky do košíku.');
+		        else
+		        	$('.insert-into-basket-btn').attr('title', 'Nejprve vyberte parametry.');
 	        }
 	        $('.atr_1').on('change', function() {
 				InsBtnEnab();
