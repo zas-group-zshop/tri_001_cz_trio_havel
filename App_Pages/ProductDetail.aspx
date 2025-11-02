@@ -26,6 +26,33 @@
                     });
 
 	        //popupCart();
+	        
+	        function InsBtnEnab() {
+	        	var A1 = $('.atr_1').val() != null;
+	        	var A2 = $('.atr_2').val() != null;
+	        	var A3 = $('.atr_3').val() != null;
+	        	var ibe = true;
+	        	
+	        	if(A1 && !$('.atr_1').find('option:selected'.is('[iskclass]'))
+		        	ibe = false;
+	        	if(A2 && !$('.atr_2').find('option:selected'.is('[iskclass]'))
+		        	ibe = false;
+	        	if(A3 && !$('.atr_3').find('option:selected'.is('[iskclass]'))
+		        	ibe = false;
+		        	
+	        	$('.insert-into-basket-btn').prop('disabled', !ibe);
+	        }
+	        $('.atr_1').on('change', function() {
+				InsBtnEnab();
+			});
+	        $('.atr_2').on('change', function() {
+				InsBtnEnab();
+			});
+	        $('.atr_3').on('change', function() {
+				InsBtnEnab();
+			});
+			
+	        InsBtnEnab();
 
 	        $('.product-detail-images').magnificPopup({
 			  	delegate: 'a',
@@ -271,7 +298,7 @@
                                                                     <div class="col-md-6">
                                                     <asp:Panel ID="pAddToBasket" runat="server" CssClass="addToBasket add-to-basket">
 			                            <asp:TextBox ID="tbQuantity" runat="server" Text="1" MaxLength="4" CssClass="form-control tb-quantity" />
-			                            <zas:IntoBasketButton ID="btIntoBasket" runat="server" CssClass="button btn btn-basic" ToolTip=""
+			                            <zas:IntoBasketButton ID="btIntoBasket" runat="server" CssClass="button btn btn-basic insert-into-basket-btn" ToolTip=""
 			                                Text="<%$ Resources: Resource, BasketEnter %>" EnableViewState="true" ViewStateMode="Enabled"
 			                                TbQuantityId="tbQuantity"
 			                                Atribut1Id="ddlAtribut1" Atribut2Id="ddlAtribut2" Atribut3Id="ddlAtribut3"
