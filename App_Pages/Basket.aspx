@@ -55,7 +55,12 @@
                                     OnItemCommand="rBasketTable_ItemCommand" OnItemDataBound="rBasketTable_ItemDataBound" >
                                     <ItemTemplate>
     									    <tr class="product">
-    											    <td><a href="<%# DataBinder.Eval(Container.DataItem, "web_items_url") %>"><%# DataBinder.Eval(Container.DataItem, "nazev") %></a></td>
+    											    <td>
+    											    	<a href="<%# DataBinder.Eval(Container.DataItem, "web_items_url") %>"><%# DataBinder.Eval(Container.DataItem, "nazev") %></a>
+    												    <%# !String.IsNullOrEmpty(DataBinder.Eval(Container.DataItem, "atribut_1").ToString()) ? "<div><b>" + DataBinder.Eval(Container.DataItem, "atribut_1_nazev") + "</b>: " + DataBinder.Eval(Container.DataItem, "atribut_1") + "</div>" : "" %>
+    												    <%# !String.IsNullOrEmpty(DataBinder.Eval(Container.DataItem, "atribut_2").ToString()) ? "<div><b>" + DataBinder.Eval(Container.DataItem, "atribut_2_nazev") + "</b>: " + DataBinder.Eval(Container.DataItem, "atribut_2") + "</div>" : "" %>
+    												    <%# !String.IsNullOrEmpty(DataBinder.Eval(Container.DataItem, "atribut_3").ToString()) ? "<div><b>" + DataBinder.Eval(Container.DataItem, "atribut_3_nazev") + "</b>: " + DataBinder.Eval(Container.DataItem, "atribut_3") + "</div>" : "" %>
+    											    </td>
     											    <td>
     												    <div class="avail"><%# DataBinder.Eval(Container.DataItem, "web_items_stav_skladu") %></div>
     											    </td>    											    
