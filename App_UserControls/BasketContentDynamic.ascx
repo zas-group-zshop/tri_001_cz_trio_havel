@@ -18,10 +18,11 @@
                 <asp:TextBox ID="tbQuantity" runat="server" Text='<%# ZASutility.MyUtility.StringToNumeric(DataBinder.Eval(Container.DataItem, "mnozstvi").ToString()) %>' Visible="false" />
 
                 <tr class="productTitle">
-				    <td colspan="2"><a href="<%# DataBinder.Eval(Container.DataItem, "web_items_url") %>"><%# DataBinder.Eval(Container.DataItem, "nazev") %></a></td>
+				    <td colspan="2"><a href="<%# DataBinder.Eval(Container.DataItem, "web_items_url") %>"><%# DataBinder.Eval(Container.DataItem, "nazev") %></a>
 				    <%# !String.IsNullOrEmpty(DataBinder.Eval(Container.DataItem, "atribut_1").ToString()) ? "<div><b>" + DataBinder.Eval(Container.DataItem, "atribut_1_nazev") + "</b>: " + DataBinder.Eval(Container.DataItem, "atribut_1") + "</div>" : "" %>
 				    <%# !String.IsNullOrEmpty(DataBinder.Eval(Container.DataItem, "atribut_2").ToString()) ? "<div><b>" + DataBinder.Eval(Container.DataItem, "atribut_2_nazev") + "</b>: " + DataBinder.Eval(Container.DataItem, "atribut_2") + "</div>" : "" %>
 				    <%# !String.IsNullOrEmpty(DataBinder.Eval(Container.DataItem, "atribut_3").ToString()) ? "<div><b>" + DataBinder.Eval(Container.DataItem, "atribut_3_nazev") + "</b>: " + DataBinder.Eval(Container.DataItem, "atribut_3") + "</div>" : "" %>
+					</td>
 				</tr>
 				<tr>
                     <td>
