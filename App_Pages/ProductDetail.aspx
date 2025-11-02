@@ -33,11 +33,11 @@
 	        	var A3 = $('.atr_3').val() != null;
 	        	var ibe = true;
 	        	
-	        	if(A1 && !$('.atr_1').find('option:selected'.is('[iskclass]'))
+	        	if(A1 && !$('.atr_1').find('option:selected'.is('[iskclass]')))
 		        	ibe = false;
-	        	if(A2 && !$('.atr_2').find('option:selected'.is('[iskclass]'))
+	        	if(A2 && !$('.atr_2').find('option:selected'.is('[iskclass]')))
 		        	ibe = false;
-	        	if(A3 && !$('.atr_3').find('option:selected'.is('[iskclass]'))
+	        	if(A3 && !$('.atr_3').find('option:selected'.is('[iskclass]')))
 		        	ibe = false;
 		        	
 	        	$('.insert-into-basket-btn').prop('disabled', !ibe);
