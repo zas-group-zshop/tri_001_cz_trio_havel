@@ -171,7 +171,7 @@
 			    							        <tr>
 												        <th><%= EvalDataFromXml("atribut_1_nazev")%></th>
 			                                            <td class="productSelect">
-			                                                <zas:ZasAtributSelector ID="ddlAtribut1" runat="server" AtributPoradi="1" AutoPostBack="true" />
+			                                                <zas:ZasAtributSelector ID="ddlAtribut1" runat="server" AtributPoradi="1" AutoPostBack="true" CssClass="atr_1" />
 			                                            </td>
 											        </tr>
 			                                    </asp:PlaceHolder>
@@ -179,7 +179,7 @@
 											        <tr>
 												        <th><%= EvalDataFromXml("atribut_2_nazev")%></th>
 			                                            <td class="productSelect">
-			                                                <zas:ZasAtributSelector ID="ddlAtribut2" runat="server" AtributPoradi="2" AutoPostBack="true" />
+			                                                <zas:ZasAtributSelector ID="ddlAtribut2" runat="server" AtributPoradi="2" AutoPostBack="true" CssClass="atr_2" />
 			                                            </td>
 											        </tr>
 			                                    </asp:PlaceHolder>
@@ -187,7 +187,7 @@
 			                                        <tr>
 												        <th><%= EvalDataFromXml("atribut_3_nazev")%></th>
 			                                            <td class="productSelect">
-			                                                <zas:ZasAtributSelector ID="ddlAtribut3" runat="server" AtributPoradi="3" AutoPostBack="true" />
+			                                                <zas:ZasAtributSelector ID="ddlAtribut3" runat="server" AtributPoradi="3" AutoPostBack="true" CssClass="atr_3" />
 			                                            </td>
 											        </tr>
 			                                    </asp:PlaceHolder>
