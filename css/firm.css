@@ -1594,9 +1594,9 @@ fieldset[disabled] a.badge {
 .product-list-table .productParam .objednavka{color: #f09e20;font-weight: 600;}
 .product-list-table .productParam .posledni{color: #e42618;font-weight: 600;}
 
-.params .skladem{display: block; height: 35px; color: #008000;font-size: 13px; font-weight: 600; margin: 0;}
-.params .objednavka{display: block; height: 35px; color: #f09e20;font-size: 13px; font-weight: 600; margin: 0;}
-.params .posledni{display: block; height: 35px; color: #e42618;font-size: 13px; font-weight: 600; margin: 0;}
+.params .skladem{display: block; height: 35px; color: #008000;font-size: 14px; font-weight: 600; margin: 0;}
+.params .objednavka{display: block; height: 35px; color: #f09e20;font-size: 14px; font-weight: 600; margin: 0;}
+.params .posledni{display: block; height: 35px; color: #e42618;font-size: 14px; font-weight: 600; margin: 0;}
 
 .ProductListList h2{font-size: 22px;font-weight: 700;text-transform: uppercase;}
 
