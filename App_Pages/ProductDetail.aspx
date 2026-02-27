@@ -144,11 +144,11 @@
 										</tr>
 										<tr>
 											<th><asp:Literal ID="Literal2" runat="server" Text="Centrální sklad" />:</th>
-											<td><%= EvalDataFromXml("web_items_stav_skladu")%></td>
+											<td><%= (ZASutility.MyUtility.StringToNumeric(EvalDataFromXml("zasoba_celkem"))==0 && ZASutility.MyUtility.StringToNumeric(EvalDataFromXml("user_disp_e2"))>0) ? "<p class='objednavka'>Na cestě od dodavatele</p>" : EvalDataFromXml("web_items_stav_skladu") %></td>
 										</tr>
 										<tr>
 											<th><asp:Literal runat="server" Text="Prodejna Teplice" />:</th>
-											<td><%= EvalDataFromXml("user_disp_e3")%></td>
+											<td><%= EvalDataFromXml("user_disp_e3") %></td>
 										</tr>
 										<asp:PlaceHolder ID="phHod" runat="server" Visible="true">
 										<tr>
