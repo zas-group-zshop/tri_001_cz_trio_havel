@@ -57,7 +57,7 @@
                             </td>
 
                             <td class="productParam">
-                                <%# DataBinder.Eval(Container.DataItem, "web_items_stav_skladu") %>
+                                <%# (ZASutility.MyUtility.StringToNumeric(DataBinder.Eval(Container.DataItem, "zasoba_celkem"))==0 && ZASutility.MyUtility.StringToNumeric(DataBinder.Eval(Container.DataItem, "user_disp_e2"))>0) ? "<p class='objednavka'>Na cestě od dodavatele</p>" : DataBinder.Eval(Container.DataItem, "web_items_stav_skladu") %>
                             </td>
                             <td class='<%= "productParam" + (this.Page.ToString().Contains("shoppinglist_aspx") ? " hide-control" : "") %>'>
                                 <%# ZASutility.MyUtility.SafeEvalString(Container.DataItem, "user_disp_e3") %>
