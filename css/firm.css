@@ -1580,7 +1580,7 @@ fieldset[disabled] a.badge {
     height: 30px;
 }
 
-.params th,.params td{padding: 0!important;font-size: 13px;}
+.params th,.params td{padding:0 !important; font-size: 13px; vertical-align: top !important;}
 .akce .params th,.akce .params td{padding: 0!important;font-size: 11px;}
 .akce .params td span{padding: 0!important;font-size: 11px;}
 
@@ -1597,6 +1597,7 @@ fieldset[disabled] a.badge {
 .params .skladem{display: block; height: 35px; color: #008000;font-size: 14px; font-weight: 600; margin: 0;}
 .params .objednavka{display: block; height: 35px; color: #f09e20;font-size: 14px; font-weight: 600; margin: 0;}
 .params .posledni{display: block; height: 35px; color: #e42618;font-size: 14px; font-weight: 600; margin: 0;}
+.productBox table tbody tr td span {height:20px !important;}
 
 .ProductListList h2{font-size: 22px;font-weight: 700;text-transform: uppercase;}
 
