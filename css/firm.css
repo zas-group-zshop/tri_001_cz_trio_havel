@@ -1948,3 +1948,5 @@ fieldset[disabled] a.badge {
         display: none;
     }
 }
+
+#ctl00_ctl21_P_PRICE_label_txt {text-transform:uppercase;}
